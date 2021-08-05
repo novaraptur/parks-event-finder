@@ -4,6 +4,7 @@ import './App.css';
 
 import Nav from '../Nav/Nav'
 import EventSearch from '../EventSearch/EventSearch';
+import SavedEvents from '../SavedEvents/SavedEvents';
 
 const App = ()=> {
   return (
@@ -14,7 +15,9 @@ const App = ()=> {
           path="/"
           render={() => {
             return (
-              <Nav />
+              <main>
+                <Nav />
+              </main>
             )
           }}
         />
@@ -23,7 +26,21 @@ const App = ()=> {
           path="/search"
           render={() => {
             return (
-              <EventSearch />
+              <main>
+                <Nav />
+                <EventSearch />
+              </main>
+            )
+          }}
+        />
+        <Route
+          exact
+          path="/saved-events"
+          render={() => {
+            return (
+              <main>
+                <SavedEvents />
+              </main>
             )
           }}
         />
