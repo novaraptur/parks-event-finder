@@ -88,6 +88,13 @@ const App = ()=> {
             <ParkDetailPage id={parseInt(match.params.park_id)} />
           }}
         />
+        <Route
+          render={() => {
+            return (
+              <Redirect to="/" />
+            )
+          }}
+        />
       </Switch>
     </BrowserRouter>
   );
