@@ -2,7 +2,9 @@ import React from 'react';
 import './SavedParks.css';
 
 const SavedParks = ()=> {
-  return ();
+  return (
+    <h2>Saved Parks</h2>
+  );
 }
 
 export default SavedParks;

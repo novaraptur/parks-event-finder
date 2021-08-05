@@ -5,6 +5,7 @@ import './App.css';
 import Nav from '../Nav/Nav'
 import EventSearch from '../EventSearch/EventSearch';
 import SavedEvents from '../SavedEvents/SavedEvents';
+import SavedParks from '../SavedParks/SavedParks';
 
 const App = ()=> {
   return (
@@ -39,7 +40,20 @@ const App = ()=> {
           render={() => {
             return (
               <main>
+                <Nav />
                 <SavedEvents />
+              </main>
+            )
+          }}
+        />
+        <Route
+          exact
+          path="/saved-parks"
+          render={() => {
+            return (
+              <main>
+                <Nav />
+                <SavedParks />
               </main>
             )
           }}
