@@ -6,6 +6,8 @@ import Nav from '../Nav/Nav'
 import EventSearch from '../EventSearch/EventSearch';
 import SavedEvents from '../SavedEvents/SavedEvents';
 import SavedParks from '../SavedParks/SavedParks';
+import EventDetailPage from '../EventDetailPage/EventDetailPage';
+import ParkDetailPage from '../ParkDetailPage/ParkDetailPage';
 
 const App = ()=> {
   return (
@@ -36,6 +38,20 @@ const App = ()=> {
         />
         <Route
           exact
+          path="/search/:event_id"
+          render={({ match }) => {
+            <EventDetailPage id={parseInt(match.params.event_id)} />
+          }}
+        />
+        <Route
+          exact
+          path="/search/:park_id"
+          render={({ match }) => {
+            <ParkDetailPage id={parseInt(match.params.park_id)} />
+          }}
+        />
+        <Route
+          exact
           path="/saved-events"
           render={() => {
             return (
@@ -48,6 +64,13 @@ const App = ()=> {
         />
         <Route
           exact
+          path="/saved-events/:event_id"
+          render={({ match }) => {
+            <EventDetailPage id={parseInt(match.params.event_id)} />
+          }}
+        />
+        <Route
+          exact
           path="/saved-parks"
           render={() => {
             return (
@@ -56,6 +79,13 @@ const App = ()=> {
                 <SavedParks />
               </main>
             )
+          }}
+        />
+        <Route
+          exact
+          path="/saved-parks/:park_id"
+          render={({ match }) => {
+            <ParkDetailPage id={parseInt(match.params.park_id)} />
           }}
         />
       </Switch>
