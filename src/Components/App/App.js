@@ -9,7 +9,9 @@ import SavedParks from '../SavedParks/SavedParks';
 import EventDetailPage from '../EventDetailPage/EventDetailPage';
 import ParkDetailPage from '../ParkDetailPage/ParkDetailPage';
 
-const App = ()=> {
+import { getEvents, getSingleEvent, getSinglePark } from '../../api-calls/apiCalls';
+
+const App = () => {
   return (
     <BrowserRouter>
       <Switch>
