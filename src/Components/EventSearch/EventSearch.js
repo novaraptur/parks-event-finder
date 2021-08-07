@@ -3,7 +3,7 @@ import './EventSearch.css';
 
 import { getEvents, getSingleEvent, getSinglePark } from '../../api-calls/apiCalls';
 
-const EventSearch = ({stateCode}) => {
+const EventSearch = ({stateCode, savedEvents, savedParks}) => {
   console.log(stateCode);
 
   const [allEvents, setAllEvents] = useState({});

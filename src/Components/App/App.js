@@ -9,8 +9,6 @@ import SavedParks from '../SavedParks/SavedParks';
 import EventDetailPage from '../EventDetailPage/EventDetailPage';
 import ParkDetailPage from '../ParkDetailPage/ParkDetailPage';
 
-import { getEvents, getSingleEvent, getSinglePark } from '../../api-calls/apiCalls';
-
 const dotenv = require('dotenv').config();
 
 const App = () => {
@@ -104,8 +102,9 @@ const App = () => {
           render={() => {
             return (
               <main>
+                {!stateCode.length && <Redirect to="/" />}
                 <Nav />
-                <EventSearch stateCode={stateCode} />
+                <EventSearch stateCode={stateCode} savedEvents={savedEvents} savedParks={savedParks} />
               </main>
             )
           }}
