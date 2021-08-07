@@ -18,7 +18,15 @@ const getSinglePark = (id) => {
 }
 
 const checkResponse = (response) => {
-
+  if (response.status === 404) {
+    throw new Error("Sorry, we can't find the page you are looking for.");
+  } else if (response.status === 500) {
+    throw new Error('Internal Server Error. Our whole team is now aware.');
+  } else if (response.status !== 200) {
+    throw new Error('Sorry, something went wrong.');
+  } else {
+    return response.json();
+  }
 }
 
 export { getEvents, getSingleEvent, getSinglePark };
