@@ -11,6 +11,8 @@ import ParkDetailPage from '../ParkDetailPage/ParkDetailPage';
 
 import { getEvents, getSingleEvent, getSinglePark } from '../../api-calls/apiCalls';
 
+const dotenv = require('dotenv').config();
+
 const App = () => {
 
   const [savedParks, setSavedPark] = useState([]);
