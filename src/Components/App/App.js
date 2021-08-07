@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import React, {useEffect, useState, useCallback} from 'react';
+import { BrowserRouter, Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import './App.css';
 
 import Nav from '../Nav/Nav'
@@ -14,23 +14,13 @@ import { getEvents, getSingleEvent, getSinglePark } from '../../api-calls/apiCal
 const dotenv = require('dotenv').config();
 
 const App = () => {
-
   const [savedParks, setSavedPark] = useState([]);
   const [savedEvents, setSavedEvent] = useState([]);
-  const [allEvents, setAllEvents] = useState([]);
-
-  // useEffect(() => {
-  //   getEvents('WA')
-  //     .then((data) => {
-  //       setAllEvents(data)
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     })
-  // });
+  const [stateCode, setStateCode] = useState('');
 
   const updateStateCode = (event) => {
     event.preventDefault();
+    setStateCode(event.target.value);
   }
 
   return (
@@ -46,10 +36,10 @@ const App = () => {
                 <section className="landing-page">
                   <select
                     name="stateCode"
-                    id="stateCode"
+                    id="stateCodeSelector"
                     onChange={updateStateCode}
                   >
-                    <option>--</option>
+                    <option disabled selected value="null">--</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
                     <option value="AZ">Arizona</option>
@@ -102,6 +92,7 @@ const App = () => {
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
                   </select>
+                  <NavLink exact to="/search"><button>See Events</button></NavLink>
                 </section>
               </main>
             )
@@ -114,7 +105,7 @@ const App = () => {
             return (
               <main>
                 <Nav />
-                <EventSearch />
+                <EventSearch stateCode={stateCode} />
               </main>
             )
           }}
