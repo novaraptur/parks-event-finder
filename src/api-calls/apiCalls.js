@@ -2,8 +2,8 @@
 const baseURL = 'https://developer.nps.gov/api/v1';
 const apiKey = process.env.REACT_APP_PARKS_API_KEY;
 
-const getEvents = (stateCode) => {
-  return fetch(`${baseURL}/events?stateCode=${stateCode}&&api_key=${apiKey}`)
+const getEvents = async (stateCode) => {
+  return await fetch(`${baseURL}/events?stateCode=${stateCode}&&api_key=${apiKey}`)
     .then(checkResponse)
 }
 
