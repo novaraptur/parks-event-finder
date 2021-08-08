@@ -10,7 +10,6 @@ const ParkDetailPage = (parkCode) => {
   useEffect(() => {
     getSingleParkByParkCode(parkCode.code)
       .then((data) => {
-        console.log(data);
         setPark(data);
       })
       .catch((error) => {

@@ -3,7 +3,6 @@ import EventDetails from '../EventDetails/EventDetails';
 import './EventDetailPage.css';
 
 import { getSingleEvent } from '../../api-calls/apiCalls';
-import { cleanEventData } from '../../utils/utils';
 
 const EventDetailPage = ({id}) => {
   const [eventInfo, setEvent] = useState({});
