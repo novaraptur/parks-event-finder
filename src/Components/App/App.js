@@ -28,14 +28,14 @@ const App = () => {
           exact
           path="/event/:event_id"
           render={({ match }) => {
-            return <EventDetailPage id={parseInt(match.params.event_id)} />
+            return <EventDetailPage id={match.params.event_id} />
           }}
         />
         <Route
           exact
           path="/park/:park_id"
           render={({ match }) => {
-            return <ParkDetailPage id={parseInt(match.params.park_id)} />
+            return <ParkDetailPage id={match.params.park_id} />
           }}
         />
         <Route
