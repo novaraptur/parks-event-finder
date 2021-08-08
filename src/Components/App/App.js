@@ -26,6 +26,57 @@ const App = () => {
       <Switch>
         <Route
           exact
+          path="/event/:event_id"
+          render={({ match }) => {
+            return <EventDetailPage id={parseInt(match.params.event_id)} />
+          }}
+        />
+        <Route
+          exact
+          path="/park/:park_id"
+          render={({ match }) => {
+            return <ParkDetailPage id={parseInt(match.params.park_id)} />
+          }}
+        />
+        <Route
+          exact
+          path="/search"
+          render={() => {
+            return (
+              <main>
+                {!stateCode.length && <Redirect to="/" />}
+                <Nav />
+                <EventSearch stateCode={stateCode} savedEvents={savedEvents} savedParks={savedParks} />
+              </main>
+            )
+          }}
+        />
+        <Route
+          exact
+          path="/saved-events"
+          render={() => {
+            return (
+              <main>
+                <Nav />
+                <SavedEvents />
+              </main>
+            )
+          }}
+        />
+        <Route
+          exact
+          path="/saved-parks"
+          render={() => {
+            return (
+              <main>
+                <Nav />
+                <SavedParks />
+              </main>
+            )
+          }}
+        />
+        <Route
+          exact
           path="/"
           render={() => {
             return (
@@ -94,71 +145,6 @@ const App = () => {
                 </section>
               </main>
             )
-          }}
-        />
-        <Route
-          exact
-          path="/search"
-          render={() => {
-            return (
-              <main>
-                {!stateCode.length && <Redirect to="/" />}
-                <Nav />
-                <EventSearch stateCode={stateCode} savedEvents={savedEvents} savedParks={savedParks} />
-              </main>
-            )
-          }}
-        />
-        <Route
-          exact
-          path="/search/:event_id"
-          render={({ match }) => {
-            <EventDetailPage id={parseInt(match.params.event_id)} />
-          }}
-        />
-        <Route
-          exact
-          path="/search/:park_id"
-          render={({ match }) => {
-            <ParkDetailPage id={parseInt(match.params.park_id)} />
-          }}
-        />
-        <Route
-          exact
-          path="/saved-events"
-          render={() => {
-            return (
-              <main>
-                <Nav />
-                <SavedEvents />
-              </main>
-            )
-          }}
-        />
-        <Route
-          exact
-          path="/saved-events/:event_id"
-          render={({ match }) => {
-            <EventDetailPage id={parseInt(match.params.event_id)} />
-          }}
-        />
-        <Route
-          exact
-          path="/saved-parks"
-          render={() => {
-            return (
-              <main>
-                <Nav />
-                <SavedParks />
-              </main>
-            )
-          }}
-        />
-        <Route
-          exact
-          path="/saved-parks/:park_id"
-          render={({ match }) => {
-            <ParkDetailPage id={parseInt(match.params.park_id)} />
           }}
         />
         <Route

@@ -12,9 +12,14 @@ const getSingleEvent = (id) => {
     .then(checkResponse)
 }
 
-const getSinglePark = (id) => {
+const getSingleParkByID = (id) => {
   return fetch(`${baseURL}/parks?id=${id}&&api_key=${apiKey}`)
     .then(checkResponse)
+}
+
+const getSingleParkByParkCode = (code) => {
+  return fetch(`${baseURL}/parks?parkCode=${code}&&api_key=${apiKey}`)
+    .then(checkResponse);
 }
 
 const checkResponse = (response) => {
@@ -29,4 +34,4 @@ const checkResponse = (response) => {
   }
 }
 
-export { getEvents, getSingleEvent, getSinglePark };
+export { getEvents, getSingleEvent, getSingleParkByID, getSingleParkByParkCode };

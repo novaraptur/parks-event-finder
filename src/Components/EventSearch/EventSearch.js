@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './EventSearch.css';
 
+import EventCard from '../EventCard/EventCard';
+
 import { getEvents, getSingleEvent, getSinglePark } from '../../api-calls/apiCalls';
 
 const EventSearch = ({stateCode, savedEvents, savedParks}) => {
-  console.log(stateCode);
-
   const [allEvents, setAllEvents] = useState({});
 
   useEffect(() => {
@@ -20,8 +20,16 @@ const EventSearch = ({stateCode, savedEvents, savedParks}) => {
 
   console.log(allEvents);
 
+  const loadEventCards = () => {
+    return allEvents.data.map((event) => {
+      return <EventCard event={event} />;
+    })
+  }
+
   return (
-    <h2>Event Search!</h2>
+    <section className="eventCards">
+      {!allEvents.data ? <h2>Loading . . .</h2> : loadEventCards()}
+    </section>
   );
 }
 
