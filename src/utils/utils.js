@@ -16,6 +16,7 @@ const cleanEventData = (rawEvent) => {
     isRegResRequired: rawEvent.isregresrequired,
     timeInfo: rawEvent.timeInfo
   };
+  //REPLACE CONDITIONAL HERE WITH IMAGES SOURCED FROM ASSOCIATED PARK PAGE
   if (!rawEvent.images[0]) {
     cleanEvent.images = [
       {
