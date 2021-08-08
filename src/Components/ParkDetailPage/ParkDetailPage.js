@@ -19,7 +19,9 @@ const ParkDetailPage = (parkCode) => {
   }, []);
 
   return (
-    <h2>PARK DETAIL PAGE!</h2>
+    <section className="park-details">
+      {!parkInfo.data ? <h2>Loading . . .</h2> : <ParkDetails parkInfo={parkInfo} />}
+    </section>
   );
 }
 
