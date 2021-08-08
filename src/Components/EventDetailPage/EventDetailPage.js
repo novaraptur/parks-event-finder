@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import EventDetails from '../EventDetails/EventDetails';
 import './EventDetailPage.css';
 
 import { getSingleEvent } from '../../api-calls/apiCalls';
+import { cleanEventData } from '../../utils/utils';
 
 const EventDetailPage = ({id}) => {
   const [eventInfo, setEvent] = useState({});
@@ -10,7 +12,6 @@ const EventDetailPage = ({id}) => {
     getSingleEvent(id)
     .then((data) => {
       setEvent(data);
-      console.log(eventInfo);
     })
     .catch((error) => {
       console.log(error);
@@ -18,7 +19,9 @@ const EventDetailPage = ({id}) => {
   }, []);
 
   return (
-    <h2>EVENT DETAIL PAGE</h2>
+    <section className="event-details">
+      {!eventInfo.data ? <h2>Loading . . .</h2> : <EventDetails eventInfo={eventInfo} />}
+    </section>
   );
 }
 

@@ -17,7 +17,7 @@ const cleanEventData = (rawEvent) => {
     timeInfo: rawEvent.timeInfo
   };
   //REPLACE CONDITIONAL HERE WITH IMAGES SOURCED FROM ASSOCIATED PARK PAGE
-  if (!rawEvent.images[0]) {
+  if (!rawEvent.images || !rawEvent.images[0]) {
     cleanEvent.images = [
       {
         url: '/common/uploads/event_calendar/EEA109D5-E4EC-EAE4-9C30D274329D6A89.jpg?maxwidth=1200&maxheight=1200&autorotate=false&quality=90'
