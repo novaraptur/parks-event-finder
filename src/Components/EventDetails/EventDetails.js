@@ -1,10 +1,14 @@
 import React from 'react';
 
+import { cleanEventData } from '../../utils/utils';
+
 const EventDetails = ({eventInfo}) => {
-  console.log(eventInfo);
+  const cleanEvent = cleanEventData(eventInfo.data[0]);
+  console.log(cleanEvent);
   return (
     <>
-      <h2>{eventInfo.title}</h2>
+      <h2>{cleanEvent.title}</h2>
+      <h3>{cleanEvent.parkName}</h3>
     </>
   );
 }

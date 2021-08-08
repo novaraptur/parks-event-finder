@@ -20,8 +20,7 @@ const EventDetailPage = ({id}) => {
 
   return (
     <section className="event-details">
-      {!eventInfo && <h2>Loading . . .</h2>}
-      {!!eventInfo && (<EventDetails eventInfo={eventInfo} />)}
+      {!eventInfo.data ? <h2>Loading . . .</h2> : <EventDetails eventInfo={eventInfo} />}
     </section>
   );
 }
