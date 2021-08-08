@@ -1,24 +1,23 @@
 
-const cleanEventData = (event) => {
+const cleanEventData = (rawEvent) => {
   let cleanEvent = {
-    id: event.id,
-    title: event.title,
-    description: event.description,
-    dates: event.dates,
-    times: event.times,
-    isFree: event.isfree,
-    isRecurring: event.isrecurring,
-    isRegResRequired: event.isregresrequired,
-    parkName: event.parkfullname,
-    images: event.images
+    id: rawEvent.id,
+    title: rawEvent.title,
+    parkName: rawEvent.parkfullname,
+    siteCode: rawEvent.sitecode,
+    dates: rawEvent.dates,
+    times: rawEvent.times,
+    description: rawEvent.description,
+    category: rawEvent.category,
+    feeInfo: rawEvent.feeInfo,
+    isAllDay: rawEvent.isallday,
+    isFree: rawEvent.isfree,
+    isRecurring: rawEvent.isrecurring,
+    isRegResRequired: rawEvent.isregresrequired,
+    timeInfo: rawEvent.timeInfo
   };
-  //for events with no images use park image
+  //clean and add images
   return cleanEvent;
 }
 
-const cleanParkData = (park) => {
-  let cleanPark = {};
-  return cleanPark;
-}
-
-export { cleanEventData, cleanParkData };
+export { cleanEventData };
