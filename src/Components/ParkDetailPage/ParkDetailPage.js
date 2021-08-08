@@ -1,7 +1,7 @@
 import React from 'react';
 import './ParkDetailPage.css';
 
-const ParkDetailPage = (id) => {
+const ParkDetailPage = (code) => {
   return (
     <h2>PARK DETAIL PAGE!</h2>
   );

@@ -33,9 +33,9 @@ const App = () => {
         />
         <Route
           exact
-          path="/park/:park_id"
+          path="/park/:park_code"
           render={({ match }) => {
-            return <ParkDetailPage id={match.params.park_id} />
+            return <ParkDetailPage code={match.params.park_code} />
           }}
         />
         <Route
