@@ -16,7 +16,15 @@ const cleanEventData = (rawEvent) => {
     isRegResRequired: rawEvent.isregresrequired,
     timeInfo: rawEvent.timeInfo
   };
-  //clean and add images
+  if (!rawEvent.images[0]) {
+    cleanEvent.images = [
+      {
+        url: '/common/uploads/event_calendar/EEA109D5-E4EC-EAE4-9C30D274329D6A89.jpg?maxwidth=1200&maxheight=1200&autorotate=false&quality=90'
+      }
+    ];
+  } else {
+    cleanEvent.images = rawEvent.images;
+  }
   return cleanEvent;
 }
 
