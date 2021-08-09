@@ -22,6 +22,8 @@ describe('Errors and warnings', () => {
   });
 
   it('should display an error message if the data cannot be loaded from the API', () => {
-    
+    cy.visit('http://localhost:3000/');
+    cy.get('select').select('Colorado');
+    cy.get('button').contains('See Events').click();
   });
 });
