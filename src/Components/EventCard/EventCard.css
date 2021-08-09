@@ -5,7 +5,16 @@
   padding: 1%;
 }
 
+.event-card:hover {
+  background-color: #d9d9d9;
+}
+
 .event-card-image {
   height: auto;
   width: 33%;
+}
+
+.event-card-text {
+  color: #000000;
+  padding-left: 5%;
 }
