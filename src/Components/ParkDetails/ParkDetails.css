@@ -38,10 +38,6 @@
   color: #bd1a89;
 }
 
-.detail-page-error {
-  margin: 10% 5%;
-}
-
 @media screen and (min-width: 850px) {
   .park-detail-image {
     height: 500px;
