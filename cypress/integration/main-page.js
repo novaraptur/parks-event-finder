@@ -10,11 +10,6 @@ describe('Home page is loaded', () => {
     cy.get('img').should('be.visible');
   });
 
-  it('should not allow the user to search events without selecting a state', () => {
-    cy.get('button').contains('See Events').click();
-    cy.url().should('eq', 'http://localhost:3000/');
-  });
-
   it('should redirect to the home page if the user enters a garbage URL', () => {
     cy.visit('http://localhost:3000/garbage-url-test');
     cy.url().should('eq', 'http://localhost:3000/');
