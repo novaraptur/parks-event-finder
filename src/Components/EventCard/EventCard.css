@@ -1,0 +1,11 @@
+
+.event-card {
+  border: 1px solid #d9d9d9;
+  display: flex;
+  padding: 1%;
+}
+
+.event-card-image {
+  height: auto;
+  width: 33%;
+}
