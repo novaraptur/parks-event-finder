@@ -4,11 +4,11 @@ import './ParkDetailPage.css';
 
 import { getSingleParkByParkCode } from '../../api-calls/apiCalls';
 
-const ParkDetailPage = (parkCode) => {
+const ParkDetailPage = ({parkCode, savePark}) => {
   const [parkInfo, setPark] = useState({});
 
   useEffect(() => {
-    getSingleParkByParkCode(parkCode.code)
+    getSingleParkByParkCode(parkCode)
       .then((data) => {
         setPark(data);
       })
@@ -19,7 +19,7 @@ const ParkDetailPage = (parkCode) => {
 
   return (
     <section className="park-details">
-      {!parkInfo.data ? <h2>Loading . . .</h2> : <ParkDetails parkInfo={parkInfo} />}
+      {!parkInfo.data ? <h2>Loading . . .</h2> : <ParkDetails parkInfo={parkInfo} savePark={savePark} />}
     </section>
   );
 }
