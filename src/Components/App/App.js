@@ -44,7 +44,6 @@ const App = () => {
           exact
           path="/park/:park_code"
           render={({ match }) => {
-            //console.log(match.params.park_code)
             return <ParkDetailPage parkCode={match.params.park_code} savePark={savePark} />
           }}
         />
@@ -80,7 +79,7 @@ const App = () => {
             return (
               <main>
                 <Nav />
-                <SavedParks />
+                <SavedParks savedParks={savedParks} />
               </main>
             )
           }}
