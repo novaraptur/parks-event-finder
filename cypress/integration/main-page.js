@@ -1,4 +1,4 @@
-describe('Page is loaded', () => {
+describe('Home page is loaded', () => {
   beforeEach(()=> {
     cy.visit('http://localhost:3000/');
   });
