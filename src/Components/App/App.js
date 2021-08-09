@@ -25,6 +25,11 @@ const App = () => {
     savedEvents.push(eventInfo);
   }
 
+  const savePark = (parkInfo) => {
+    savedParks.push(parkInfo);
+    console.log(savedParks);
+  }
+
   return (
     <BrowserRouter>
       <Switch>
@@ -39,7 +44,7 @@ const App = () => {
           exact
           path="/park/:park_code"
           render={({ match }) => {
-            return <ParkDetailPage code={match.params.park_code} />
+            return <ParkDetailPage parkCode={match.params.park_code} savePark={savePark} />
           }}
         />
         <Route
@@ -74,7 +79,7 @@ const App = () => {
             return (
               <main>
                 <Nav />
-                <SavedParks />
+                <SavedParks savedParks={savedParks} />
               </main>
             )
           }}

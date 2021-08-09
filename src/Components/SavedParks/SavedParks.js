@@ -1,9 +1,20 @@
 import React from 'react';
 import './SavedParks.css';
 
-const SavedParks = ()=> {
+import ParkCard from '../ParkCard/ParkCard';
+
+const SavedParks = ({savedParks}) => {
+  const loadSavedParkCards = () => {
+    return savedParks.map((item) => {
+      return <ParkCard park={item.data[0]} />;
+    })
+  }
+
   return (
-    <h2>Saved Parks</h2>
+    <section className="saved-parks-section">
+      <h2>Your Parks</h2>
+      {loadSavedParkCards()}
+    </section>
   );
 }
 
