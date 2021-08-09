@@ -30,6 +30,10 @@
   width: 100%;
 }
 
+.event-detail-text {
+  margin: 3%;
+}
+
 .park-link {
   color: #bd1a89;
 }
