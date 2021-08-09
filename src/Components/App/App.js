@@ -143,7 +143,7 @@ const App = () => {
                       <option value="WI">Wisconsin</option>
                       <option value="WY">Wyoming</option>
                     </select>
-                    <NavLink exact to="/search"><button>See Events</button></NavLink>
+                    <NavLink exact to="/search"><button className="see-events-button">See Events</button></NavLink>
                   </div>
                   <img src="https://www.nps.gov/npgallery/GetAsset/F274C1CA-155D-451F-67F12CC510281EFF/proxy/hires" alt="Glacier National Park" className="intro-img" />
                 </section>

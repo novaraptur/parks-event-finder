@@ -20,14 +20,16 @@ const EventDetails = ({eventInfo}) => {
 
   return (
     <>
-      <NavLink to='/search'><button>Back</button></NavLink>
-      <img src={`https://www.nps.gov${cleanEvent.images[0].url}`} />
-      <button>Save Event</button>
-      <h2>{cleanEvent.title}</h2>
-      <NavLink to={`/park/${cleanEvent.siteCode}`}><h3 className="park-link">{cleanEvent.parkName}</h3></NavLink>
-      {loadDates()}
-      <p>{cleanEvent.times[0].timestart} - {cleanEvent.times[0].timeend}</p>
-      {loadDescription()}
+      <NavLink to='/search'><button className="back-button detail-page-button">Back</button></NavLink>
+      <img src={`https://www.nps.gov${cleanEvent.images[0].url}`} className="event-detail-image" />
+      <button className="save-button detail-page-button">Save Event</button>
+      <div className="event-detail-text">
+        <h2>{cleanEvent.title}</h2>
+        <NavLink to={`/park/${cleanEvent.siteCode}`}><h3 className="park-link">{cleanEvent.parkName}</h3></NavLink>
+        {loadDates()}
+        <p>{cleanEvent.times[0].timestart} - {cleanEvent.times[0].timeend}</p>
+        {loadDescription()}
+      </div>
     </>
   );
 }

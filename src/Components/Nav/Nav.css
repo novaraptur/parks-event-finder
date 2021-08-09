@@ -9,13 +9,14 @@ ul {
 }
 
 .navigation {
-  color: #d23fa4;
+  color: #bd1a89;
   padding: 5px 10px;
   text-decoration: none;
 }
 
 .navigation:hover {
-  background-color: #d23fa4;
+  background-color: #bd1a89;
   border-radius: 5px;
   color: #ffffff;
+  transition-duration: 0.4s;
 }
