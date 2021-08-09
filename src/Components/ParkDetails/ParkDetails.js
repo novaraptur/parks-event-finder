@@ -21,19 +21,26 @@ const ParkDetails = ({parkInfo, savePark}) => {
     savePark(parkInfo);
   }
 
+  console.log(parkData);
+
   return (
     <>
       <NavLink to='/search'><button className="back-button detail-page-button">Back</button></NavLink>
-      <img src={parkData.images[0].url} alt={parkData.images[0].alt} className="park-detail-image" />
-      <button onClick={handleClick} className="save-button detail-page-button">Save Park</button>
-      <div className="park-detail-text">
-        <h2>{parkData.fullName}</h2>
-        <a href={parkData.url} className="external-link"><h3>More Info</h3></a>
-        <p>{parkData.description}</p>
-        <h3>Directions</h3>
-        <p>{parkData.directionsInfo}</p>
-      </div>
-      {displayParkImages()}
+      {!parkData && <h2 className="error-message detail-page-error">Warning: Data for this park could not be found.</h2>}
+      {!!parkData &&
+        <>
+          <img src={parkData.images[0].url} alt={parkData.images[0].alt} className="park-detail-image" />
+          <button onClick={handleClick} className="save-button detail-page-button">Save Park</button>
+          <div className="park-detail-text">
+            <h2>{parkData.fullName}</h2>
+            <a href={parkData.url} className="external-link"><h3>More Info</h3></a>
+            <p>{parkData.description}</p>
+            <h3>Directions</h3>
+            <p>{parkData.directionsInfo}</p>
+          </div>
+          {displayParkImages()}
+        </>
+      }
     </>
   );
 }

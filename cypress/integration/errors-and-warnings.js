@@ -13,10 +13,6 @@ describe('Errors and warnings', () => {
     cy.visit('http://localhost:3000/saved-parks');
   });
 
-  it('should display a warning if there is no data for a park', () => {
-    cy.visit('http://localhost:3000/parks/kdau');
-  });
-
   it('should display a warning if there is no data for an event', () => {
     cy.visit('http://localhost:3000/events/aoobgawepauwgpaohwedknaf');
   });
