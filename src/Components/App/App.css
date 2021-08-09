@@ -19,6 +19,22 @@ a {
   padding: 4% 0 4%;
 }
 
+.see-events-button {
+  background-color: #bd1a89;
+  border: 2px solid #bd1a89;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  width: 140px;
+}
+
+.see-events-button:hover {
+  background-color: #ffffff;
+  color: #bd1a89;
+  transition-duration: 0.4s;
+}
+
 .intro-img {
   width: 100%;
 }
