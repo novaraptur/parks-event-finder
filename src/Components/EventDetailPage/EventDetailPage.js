@@ -4,7 +4,7 @@ import './EventDetailPage.css';
 
 import { getSingleEvent } from '../../api-calls/apiCalls';
 
-const EventDetailPage = ({id}) => {
+const EventDetailPage = ({id, saveEvent}) => {
   const [eventInfo, setEvent] = useState({});
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const EventDetailPage = ({id}) => {
 
   return (
     <section className="event-details">
-      {!eventInfo.data ? <h2>Loading . . .</h2> : <EventDetails eventInfo={eventInfo} />}
+      {!eventInfo.data ? <h2>Loading . . .</h2> : <EventDetails eventInfo={eventInfo} saveEvent={saveEvent} />}
     </section>
   );
 }
