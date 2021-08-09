@@ -1,0 +1,36 @@
+
+.park-card {
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  display: flex;
+  padding: 2%;
+}
+
+.park-card:hover {
+  background-color: #d9d9d9;
+}
+
+.park-card-image {
+  height: 100%;
+  width: 33%;
+}
+
+.park-card-text {
+  color: #000000;
+  padding-left: 5%;
+  width: 60%;
+}
+
+@media screen and (max-width: 850px) {
+  .park-card {
+    padding: 4%;
+  }
+
+  .park-card-image {
+    width: 60%;
+  }
+
+  .park-card-text {
+    width: 40%;
+  }
+}
