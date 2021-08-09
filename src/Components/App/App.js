@@ -62,7 +62,7 @@ const App = () => {
             return (
               <main>
                 <Nav />
-                <SavedEvents />
+                <SavedEvents savedEvents={savedEvents} />
               </main>
             )
           }}

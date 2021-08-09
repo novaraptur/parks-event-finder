@@ -21,8 +21,8 @@ const EventSearch = ({stateCode, savedEvents, savedParks}) => {
   console.log(allEvents);
 
   const loadEventCards = () => {
-    return allEvents.data.map((event) => {
-      return <EventCard event={event} />;
+    return allEvents.data.map((item) => {
+      return <EventCard event={item} />;
     })
   }
 
