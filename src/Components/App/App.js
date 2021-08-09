@@ -83,6 +83,7 @@ const App = () => {
               <main>
                 <Nav />
                 <section className="landing-page">
+                  <label for="stateCodeSelector">Select Your State</label>
                   <select
                     name="stateCode"
                     id="stateCodeSelector"
@@ -142,6 +143,7 @@ const App = () => {
                     <option value="WY">Wyoming</option>
                   </select>
                   <NavLink exact to="/search"><button>See Events</button></NavLink>
+                  <img src="https://www.nps.gov/npgallery/GetAsset/F274C1CA-155D-451F-67F12CC510281EFF/proxy/hires" alt="Glacier National Park" className="intro-img" />
                 </section>
               </main>
             )
