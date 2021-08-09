@@ -21,6 +21,10 @@ const App = () => {
     setStateCode(event.target.value);
   }
 
+  const saveEvent = (eventInfo) => {
+    savedEvents.push(eventInfo);
+  }
+
   return (
     <BrowserRouter>
       <Switch>
@@ -28,7 +32,7 @@ const App = () => {
           exact
           path="/event/:event_id"
           render={({ match }) => {
-            return <EventDetailPage id={match.params.event_id} />
+            return <EventDetailPage id={match.params.event_id} saveEvent={saveEvent} />
           }}
         />
         <Route
