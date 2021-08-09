@@ -1,4 +1,23 @@
 
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+
+.event-detail-image {
+  height: auto;
+  width: 100%;
+}
+
 .park-link {
   color: #bd1a89;
+}
+
+@media screen and (min-width: 850px) {
+  .event-detail-image {
+    height: 500px;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
 }

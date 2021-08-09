@@ -20,8 +20,8 @@ const EventDetails = ({eventInfo}) => {
 
   return (
     <>
-      <NavLink to='/search'><button>Back</button></NavLink>
-      <img src={`https://www.nps.gov${cleanEvent.images[0].url}`} />
+      <NavLink to='/search'><button className="back-button">Back</button></NavLink>
+      <img src={`https://www.nps.gov${cleanEvent.images[0].url}`} className="event-detail-image" />
       <button>Save Event</button>
       <h2>{cleanEvent.title}</h2>
       <NavLink to={`/park/${cleanEvent.siteCode}`}><h3 className="park-link">{cleanEvent.parkName}</h3></NavLink>
