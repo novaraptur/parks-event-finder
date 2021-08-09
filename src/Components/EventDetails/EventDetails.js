@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './EventDetails.css';
 
 import { cleanEventData } from '../../utils/utils';
 
@@ -23,7 +24,7 @@ const EventDetails = ({eventInfo}) => {
       <img src={`https://www.nps.gov${cleanEvent.images[0].url}`} />
       <button>Save Event</button>
       <h2>{cleanEvent.title}</h2>
-      <NavLink to={`/park/${cleanEvent.siteCode}`}><h3>{cleanEvent.parkName}</h3></NavLink>
+      <NavLink to={`/park/${cleanEvent.siteCode}`}><h3 className="park-link">{cleanEvent.parkName}</h3></NavLink>
       {loadDates()}
       <p>{cleanEvent.times[0].timestart} - {cleanEvent.times[0].timeend}</p>
       {loadDescription()}
