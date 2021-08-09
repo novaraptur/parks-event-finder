@@ -7,6 +7,14 @@ body {
   margin: 0;
 }
 
+.selector {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4% 0 4%;
+}
+
 .intro-img {
   width: 100%;
 }
