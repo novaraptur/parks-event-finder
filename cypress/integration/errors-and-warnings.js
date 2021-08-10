@@ -5,17 +5,15 @@ describe('Errors and warnings', () => {
     cy.url().should('eq', 'http://localhost:3000/');
   });
 
-  it('should display a message to the user if they have no saved events', () => {
-    cy.visit('http://localhost:3000/saved-events');
-  });
-
-  it('should display a message to the user if they have no saved parks', () => {
-    cy.visit('http://localhost:3000/saved-parks');
-  });
-
   it('should display an error message if the data cannot be loaded from the API', () => {
     cy.visit('http://localhost:3000/');
     cy.get('select').select('Colorado');
     cy.get('button').contains('See Events').click();
+    cy.intercept('GET',
+      'https://developer.nps.gov/api/v1/events/stateCode="CO"',
+      {
+        statusCode: 500
+      }
+    );
   });
 });
