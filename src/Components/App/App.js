@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import { BrowserRouter, Switch, Route, Redirect, NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './App.css';
 
 import Nav from '../Nav/Nav'
@@ -170,6 +171,12 @@ const App = () => {
       </Switch>
     </BrowserRouter>
   );
+}
+
+App.propTypes = {
+  savedParks: PropTypes.array,
+  savedEvents: PropTypes.array,
+  stateCode: PropTypes.string
 }
 
 export default App;
