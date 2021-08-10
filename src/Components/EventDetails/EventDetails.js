@@ -24,15 +24,20 @@ const EventDetails = ({eventInfo, saveEvent}) => {
   return (
     <>
       <NavLink to='/search'><button className="back-button detail-page-button">Back</button></NavLink>
-      <img src={`https://www.nps.gov${cleanEvent.images[0].url}`} className="event-detail-image" />
-      <button className="save-button detail-page-button" onClick={handleClick}>Save Event</button>
-      <div className="event-detail-text">
-        <h2>{cleanEvent.title}</h2>
-        <NavLink to={`/park/${cleanEvent.siteCode}`}><h3 className="park-link">{cleanEvent.parkName}</h3></NavLink>
-        {loadDates()}
-        <p>{cleanEvent.times[0].timestart} - {cleanEvent.times[0].timeend}</p>
-        {loadDescription()}
-      </div>
+      {!cleanEvent && <h2 className="error-message detail-page-error">Warning: Data for this event could not be found.</h2>}
+      {!!cleanEvent &&
+        <>
+          <img src={`https://www.nps.gov${cleanEvent.images[0].url}`} className="event-detail-image" />
+          <button className="save-button detail-page-button" onClick={handleClick}>Save Event</button>
+          <div className="event-detail-text">
+            <h2>{cleanEvent.title}</h2>
+            <NavLink to={`/park/${cleanEvent.siteCode}`}><h3 className="park-link">{cleanEvent.parkName}</h3></NavLink>
+            {loadDates()}
+            <p>{cleanEvent.times[0].timestart} - {cleanEvent.times[0].timeend}</p>
+            {loadDescription()}
+          </div>
+        </>
+      }
     </>
   );
 }
