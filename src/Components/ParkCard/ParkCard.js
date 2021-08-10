@@ -1,8 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './ParkCard.css';
 
-const ParkCard = ({park})=> {
+const ParkCard = ({park}) => {
   return (
     <NavLink to={`/park/${park.parkCode}`}>
       <article id={park.id} className="park-card">
@@ -14,6 +15,10 @@ const ParkCard = ({park})=> {
       </article>
     </NavLink>
   );
+}
+
+ParkCard.propTypes = {
+  park: PropTypes.object
 }
 
 export default ParkCard;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './EventCard.css';
 
 import { cleanEventData } from '../../utils/utils';
@@ -19,6 +20,10 @@ const EventCard = ({event}) => {
       </article>
     </NavLink>
   );
+}
+
+EventCard.propTypes = {
+  event: PropTypes.object
 }
 
 export default EventCard;

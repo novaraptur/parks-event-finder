@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './SavedEvents.css';
 
 import EventCard from '../EventCard/EventCard';
@@ -16,6 +17,10 @@ const SavedEvents = ({savedEvents}) => {
       {loadSavedEventCards()}
     </section>
   );
+}
+
+SavedEvents.propTypes = {
+  savedEvents: PropTypes.array
 }
 
 export default SavedEvents;

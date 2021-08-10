@@ -28,7 +28,6 @@ const App = () => {
 
   const savePark = (parkInfo) => {
     savedParks.push(parkInfo);
-    console.log(savedParks);
   }
 
   return (

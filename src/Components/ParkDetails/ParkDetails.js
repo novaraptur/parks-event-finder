@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './ParkDetails.css';
 
 const ParkDetails = ({parkInfo, savePark}) => {
@@ -43,6 +44,11 @@ const ParkDetails = ({parkInfo, savePark}) => {
       }
     </>
   );
+}
+
+ParkDetails.propTypes = {
+  parkInfo: PropTypes.object,
+  savePark: PropTypes.func
 }
 
 export default ParkDetails;

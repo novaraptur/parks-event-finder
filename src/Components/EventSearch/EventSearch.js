@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './EventSearch.css';
 
 import EventCard from '../EventCard/EventCard';
@@ -29,6 +30,12 @@ const EventSearch = ({stateCode, savedEvents, savedParks}) => {
       {!allEvents.data ? <h2>Loading . . .</h2> : loadEventCards()}
     </section>
   );
+}
+
+EventSearch.propTypes = {
+  stateCode: PropTypes.string,
+  getSingleEvent: PropTypes.func,
+  getSinglePark: PropTypes.func
 }
 
 export default EventSearch;
