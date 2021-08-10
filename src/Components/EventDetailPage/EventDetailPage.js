@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import EventDetails from '../EventDetails/EventDetails';
+import PropTypes from 'prop-types';
 import './EventDetailPage.css';
 
 import { getSingleEvent } from '../../api-calls/apiCalls';
@@ -22,6 +23,11 @@ const EventDetailPage = ({id, saveEvent}) => {
       {!eventInfo.data ? <h2>Loading . . .</h2> : <EventDetails eventInfo={eventInfo} saveEvent={saveEvent} />}
     </section>
   );
+}
+
+EventDetailPage.propTypes = {
+  id: PropTypes.number,
+  saveEvent: PropTypes.func
 }
 
 export default EventDetailPage;

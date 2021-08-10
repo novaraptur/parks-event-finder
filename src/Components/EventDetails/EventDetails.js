@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './EventDetails.css';
 
 import { cleanEventData } from '../../utils/utils';
@@ -40,6 +41,11 @@ const EventDetails = ({eventInfo, saveEvent}) => {
       }
     </>
   );
+}
+
+EventDetails.propTypes = {
+  eventInfo: PropTypes.object,
+  saveEvent: PropTypes.func
 }
 
 export default EventDetails;
