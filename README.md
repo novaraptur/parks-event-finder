@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Parks Event Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## [View The Deployed Site Here](https://parks-event-finder.herokuapp.com/)
 
-## Available Scripts
+## [National Parks Service API](https://www.nps.gov/subjects/developer/api-documentation.htm#/parks/getPark)
 
-In the project directory, you can run:
+## Overview
 
-### `yarn start`
+Parks Event Finder is an app created with ReactJS and the National Parks Service API. The app allows the user to select their state and search through events in that state, view detail pages for the events and the parks that the events are held in, and save their favorite parks and events.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Set Up
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To run this app locally, you will need a National Parks Service API key. Visit [this link](https://www.nps.gov/subjects/developer/get-started.htm) and input your information to get an API key.
 
-### `yarn test`
+Clone this repo down, and `cd` into it.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Run `npm install`
 
-### `yarn build`
+Run `touch .env` in the root folder of the directory, and paste your API key into it assigned to the following variable:
+```
+REACT_APP_PARKS_API_KEY=<your api key>
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run `npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Future Extensions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ - [ ] Load image associated with park the event is being held in if there is no image associated with the event
+ - [ ] Add more fleshed-out search functionality, including being able to select multiple states
+ - [ ] Save bookmarked events & parks to localStorage so they persist on reload
+ - [ ] Update the UI to use more intuitive icons (bookmark to save events/parks, etc.)
+ - [ ] Add a 'share' icon to event cards and event detail pages that makes the links easier to share with others
 
-### `yarn eject`
+## Tools & Technologies
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ - React
+ - React Router
+ - Cypress
+ - CSS
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**************************************************************************
+###### This project was created for [Turing School of Software and Design](https://turing.io/)
