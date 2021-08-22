@@ -3,6 +3,9 @@ orbs:
   cypress: cypress-io/cypress@1.29.0
 workflows:
   build:
-    jobs:
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm start
       - cypress/install
       - cypress/run
