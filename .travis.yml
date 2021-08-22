@@ -17,5 +17,5 @@ cache:
     - npm run cy:verify
 
 script:
-    - npm run cy:start-server-and-test
+    - npm test
     - kill $(jobs -p) || true
