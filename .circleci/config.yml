@@ -4,8 +4,5 @@ orbs:
 workflows:
   build:
     jobs:
-      - checkout
-      - run: npm install
-      - run: npm start
       - cypress/install
       - cypress/run
